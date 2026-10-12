@@ -204,10 +204,9 @@ Interactive UI simulations for case studies are configured in [`src/components/P
 
 ---
 
-## 🌐 Deployment
+## 🌐 Deploying to Vercel
 
-### Vercel (Recommended)
-This repository contains a [`vercel.json`](vercel.json) pre-configured with:
+The portfolio is pre-configured for **[Vercel](https://vercel.com/)** using [`vercel.json`](vercel.json):
 ```json
 {
   "buildCommand": "npm run build",
@@ -215,14 +214,114 @@ This repository contains a [`vercel.json`](vercel.json) pre-configured with:
 }
 ```
 
-1. Push your repository to GitHub.
-2. In [Vercel](https://vercel.com/), select **Add New Project** and import the repository.
-3. Keep default settings; Vercel automatically runs `npm run build` and deploys `dist/`.
+---
 
-### Any Static Host (GitHub Pages, Cloudflare Pages, Netlify)
-Since the build step generates completely self-contained static HTML and assets in `dist/`, it can be hosted on any static web server:
-- **Build command**: `npm run build`
-- **Publish directory**: `dist`
+### Part 1: First-Time Setup (Step-by-Step)
+
+Follow these steps once to connect your repository and publish your site live:
+
+#### Step 1: Push All Changes to GitHub
+Make sure your latest local edits are committed and pushed to your remote repository:
+```bash
+# Check changed files
+git status
+
+# Stage all files
+git add .
+
+# Commit with a message
+git commit -m "feat: design polish, section spacing, and favicon"
+
+# Push to main branch
+git push origin main
+```
+
+#### Step 2: Sign Up / Log In to Vercel
+1. Go to **[vercel.com](https://vercel.com/)**.
+2. Click **Sign Up** or **Log In**.
+3. Select **Continue with GitHub** (this links your repositories directly).
+
+#### Step 3: Import the Repository
+1. In your Vercel Dashboard, click the blue **"Add New..."** button (top right) → select **"Project"**.
+2. Under "Import Git Repository", search for `arvind-portfolio`.
+3. Click the **"Import"** button next to your repository.
+
+#### Step 4: Confirm Build Settings
+Vercel automatically detects the [`vercel.json`](vercel.json) file in your repository:
+- **Framework Preset**: `Other`
+- **Root Directory**: `./`
+- **Build Command**: `npm run build` (overridden by `vercel.json`)
+- **Output Directory**: `dist` (overridden by `vercel.json`)
+- **Install Command**: `npm install`
+
+*(You do not need to change any environment variables or settings)*.
+
+#### Step 5: Click "Deploy"
+1. Click the **"Deploy"** button.
+2. Vercel will install dependencies and execute `tsx scripts/build.tsx` in approximately 30 seconds.
+3. You will see celebratory confetti and your live URL:
+   ```
+   https://arvind-portfolio.vercel.app
+   ```
+
+#### Step 6 (Optional): Connect a Custom Domain
+1. In your project page on Vercel, navigate to **Settings** → **Domains**.
+2. Enter your custom domain (e.g. `arvindvishwakarma.com` or `arvind.dev`).
+3. Follow Vercel's instructions to add the `CNAME` or `A` record in your domain registrar (GoDaddy, Namecheap, Cloudflare, etc.). Vercel automatically provisions a free SSL/HTTPS certificate.
+
+---
+
+### Part 2: How Deployments Happen Automatically Later (CI/CD)
+
+Once your first deployment is connected to GitHub, **you never need to log into the Vercel dashboard again** for routine updates.
+
+#### 1. Instant Production Deployments on `git push`
+Every time you push commits to your `main` branch:
+```bash
+# 1. Edit profile.ts or add a new project in content/projects/
+# 2. Commit and push:
+git add .
+git commit -m "Add new case study"
+git push origin main
+```
+1. GitHub instantly notifies Vercel via webhook.
+2. Vercel launches a build worker, runs `npm run build`, and generates the new static pages in `dist/`.
+3. Within **15–30 seconds**, your live site updates automatically with zero downtime.
+
+#### 2. Preview Deployments for Branches & Pull Requests
+If you want to experiment or review changes without affecting your live production site:
+```bash
+# Create and switch to a new branch
+git checkout -b new-experiment
+
+# Make changes and push to GitHub
+git add .
+git commit -m "Experiment with new layout"
+git push origin new-experiment
+```
+- Vercel automatically generates a dedicated **Preview URL** (e.g. `https://arvind-portfolio-git-new-experiment-....vercel.app`).
+- You can test and inspect the site on your phone or desktop.
+- When satisfied, merge the branch into `main` and Vercel automatically deploys it to your live production domain.
+
+---
+
+### Part 3: Alternative — Deploy from Terminal (Vercel CLI)
+
+If you prefer deploying directly from your command line without the GitHub dashboard:
+
+```bash
+# 1. Install Vercel CLI globally
+npm install -g vercel
+
+# 2. Login to your Vercel account
+vercel login
+
+# 3. Deploy a preview build
+vercel
+
+# 4. Deploy directly to production
+vercel --prod
+```
 
 ---
 

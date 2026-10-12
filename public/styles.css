@@ -698,32 +698,110 @@ kbd {
 }
 
 /* ==========================================================================
-   Selected Work — Streamlined Project Cards (Homepage)
+   Section Layout & System Spacing
    ========================================================================== */
 
+.section {
+  padding-top: clamp(72px, 8vw, 112px);
+  padding-bottom: clamp(72px, 8vw, 112px);
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+
+.section.narrow {
+  max-width: 920px;
+}
+
+.section-header {
+  margin-bottom: clamp(36px, 4.5vw, 52px);
+}
+
+.section-header h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-top: 4px;
+  margin-bottom: 8px;
+  line-height: 1.18;
+}
+
+.section-lede {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 64ch;
+  margin: 0;
+}
+
 .section-tag-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--mono);
   font-size: 11px;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 8px;
   text-transform: uppercase;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-line);
+  padding: 3px 10px;
+  border-radius: 999px;
 }
+
+/* ==========================================================================
+   Tags & Tech Stack Badges
+   ========================================================================== */
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-pill {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tag-text);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-line);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.18s ease;
+}
+
+.tag-pill:hover {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Selected Work — Clean, High-Impact Project Cards
+   ========================================================================== */
 
 .projects-clean-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .clean-project-card {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 36px;
   align-items: center;
-  padding: 28px 32px;
+  padding: 30px 36px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -747,21 +825,21 @@ kbd {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .project-order-tag {
   font-family: var(--mono);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
 
 .project-role-badge {
   font-size: 12px;
-  font-weight: 550;
-  padding: 2px 9px;
+  font-weight: 600;
+  padding: 3px 10px;
   background: var(--surface-hover);
   border: 1px solid var(--line);
   color: var(--ink-secondary);
@@ -772,7 +850,7 @@ kbd {
   font-size: clamp(21px, 2.3vw, 26px);
   font-weight: 750;
   line-height: 1.25;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .clean-card-title a {
@@ -788,15 +866,15 @@ kbd {
 .clean-card-desc {
   color: var(--muted);
   font-size: 15px;
-  line-height: 1.55;
-  margin-bottom: 16px;
+  line-height: 1.6;
+  margin-bottom: 18px;
   max-width: 56ch;
 }
 
 .clean-card-aside {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .clean-impact-box {
@@ -804,7 +882,7 @@ kbd {
   border: 1px solid var(--line);
   border-left: 3.5px solid var(--accent);
   border-radius: 10px;
-  padding: 14px 18px;
+  padding: 16px 20px;
 }
 
 .impact-label-mini {
@@ -819,7 +897,7 @@ kbd {
 
 .impact-highlight-text {
   margin: 0;
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--ink);
   line-height: 1.45;
@@ -834,7 +912,7 @@ kbd {
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
-  padding: 10px 18px;
+  padding: 11px 20px;
   background: var(--tag-bg);
   border: 1px solid var(--tag-line);
   border-radius: 9px;
@@ -1419,14 +1497,28 @@ kbd {
    About Section
    ========================================================================== */
 
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 38px 42px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
 .about-prose {
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--ink-secondary);
 }
 
 .about-prose p {
-  max-width: 68ch;
-  margin-bottom: 1.2em;
+  max-width: 72ch;
+  margin-bottom: 1.3em;
+}
+
+.about-prose p:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -1435,7 +1527,7 @@ kbd {
 
 .timeline-wrapper {
   position: relative;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .timeline {
@@ -1448,63 +1540,98 @@ kbd {
 .timeline::before {
   content: "";
   position: absolute;
-  top: 16px;
+  top: 24px;
   bottom: 24px;
-  left: 200px;
+  left: 170px;
   width: 2px;
-  background: var(--line);
+  background: var(--line-strong);
 }
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 40px;
-  padding: 24px 0 32px;
+  grid-template-columns: 145px 1fr;
+  gap: 36px;
+  padding: 18px 0 24px;
   position: relative;
 }
 
 .timeline-marker {
   position: absolute;
-  left: 196px;
-  top: 29px;
+  left: 166px;
+  top: 36px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--surface);
   border: 2px solid var(--accent);
-  box-shadow: 0 0 0 3px var(--paper);
+  box-shadow: 0 0 0 4px var(--paper);
   z-index: 2;
 }
 
 .when {
   color: var(--muted);
-  font: 500 14px/1.4 var(--mono);
-  padding-top: 4px;
+  font: 600 13px/1.4 var(--mono);
+  padding-top: 14px;
+  letter-spacing: 0.02em;
+}
+
+.timeline-body {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-body:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .timeline-body h3 {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 750;
   margin-bottom: 4px;
+  color: var(--ink);
 }
 
 .org {
   color: var(--accent);
-  font-weight: 550;
-  font-size: 15px;
-  margin: 0 0 12px;
+  font-weight: 600;
+  font-size: 14.5px;
+  margin: 0 0 16px;
 }
 
 .experience-points {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  padding-left: 20px;
   max-width: 68ch;
 }
 
 .experience-points li {
-  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
   color: var(--ink-secondary);
-  line-height: 1.55;
+  line-height: 1.58;
+  font-size: 14.5px;
+}
+
+.experience-points li:last-child {
+  margin-bottom: 0;
+}
+
+.experience-points li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
 }
 
 /* ==========================================================================
@@ -1513,15 +1640,15 @@ kbd {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px;
 }
 
 .skill-card {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 22px 24px;
+  border-radius: 14px;
+  padding: 24px 26px;
   box-shadow: var(--card-shadow);
   transition: all 0.2s ease;
 }
@@ -1533,13 +1660,21 @@ kbd {
 }
 
 .skill-card h3 {
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.skill-card h3::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .skill-chips {
@@ -1553,7 +1688,7 @@ kbd {
 
 .skill-chip {
   font-size: 13px;
-  padding: 4px 11px;
+  padding: 5px 12px;
   background: var(--surface-hover);
   border: 1px solid var(--line);
   color: var(--ink-secondary);
@@ -1574,22 +1709,32 @@ kbd {
    ========================================================================== */
 
 .contact {
-  padding-bottom: 96px;
+  padding-bottom: clamp(72px, 8vw, 112px);
 }
 
 .contact-box {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 44px 40px;
   box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.contact-box h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 .contact-lede {
-  font-size: 17.5px;
+  font-size: 16.5px;
   color: var(--muted);
-  max-width: 62ch;
-  margin-bottom: 24px;
+  max-width: 64ch;
+  margin-bottom: 26px;
+  line-height: 1.6;
 }
 
 .contact-actions {
@@ -1601,7 +1746,7 @@ kbd {
 }
 
 .contact-email {
-  font: 750 clamp(22px, 3.4vw, 36px) var(--display);
+  font: 750 clamp(20px, 3.2vw, 34px) var(--display);
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
@@ -1617,7 +1762,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--muted);
 }
 
@@ -1962,25 +2107,30 @@ kbd {
     transform: translateY(-3px);
   }
 
+  .clean-project-card,
   .project-card {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 24px;
+    gap: 22px;
+    padding: 24px 20px;
+  }
+
+  .about-card {
+    padding: 28px 24px;
   }
 
   .timeline::before {
-    left: 20px;
+    left: 16px;
   }
 
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding-left: 36px;
+    padding-left: 32px;
   }
 
   .timeline-marker {
-    left: 16px;
-    top: 28px;
+    left: 12px;
+    top: 22px;
   }
 
   .site-nav {

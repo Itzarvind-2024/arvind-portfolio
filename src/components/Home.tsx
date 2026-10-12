@@ -108,17 +108,27 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* About Section */}
       <section id="about" className="wrap section narrow">
         <div className="section-header">
+          <div className="section-tag-badge">BACKGROUND & PHILOSOPHY</div>
           <h2>About</h2>
+          <p className="section-lede">
+            Engineering under real-world operational constraints: offline-first architectures, sub-second latency, and rock-solid reliability.
+          </p>
         </div>
-        <div className="about-prose">
-          {about.map((para, i) => <p key={i}>{para}</p>)}
+        <div className="about-card">
+          <div className="about-prose">
+            {about.map((para, i) => <p key={i}>{para}</p>)}
+          </div>
         </div>
       </section>
 
       {/* Experience Timeline */}
       <section id="experience" className="wrap section">
         <div className="section-header">
+          <div className="section-tag-badge">CAREER JOURNEY</div>
           <h2>Experience</h2>
+          <p className="section-lede">
+            Hands-on technical leadership, system architecture, and production delivery in high-stakes retail environments.
+          </p>
         </div>
         <div className="timeline-wrapper">
           <ol className="timeline">
@@ -140,7 +150,11 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* Skills Grid */}
       <section id="skills" className="wrap section">
         <div className="section-header">
+          <div className="section-tag-badge">CAPABILITIES & TOOLS</div>
           <h2>Skills & Expertise</h2>
+          <p className="section-lede">
+            Core technologies and architectural paradigms battle-tested in live multi-counter store deployments.
+          </p>
         </div>
         <div className="skills-grid">
           {skills.map((g) => (
@@ -159,7 +173,8 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* Contact Section */}
       <section id="contact" className="wrap section contact">
         <div className="contact-box">
-          <h2>Let's talk</h2>
+          <div className="section-tag-badge">GET IN TOUCH</div>
+          <h2>Let's build something exceptional</h2>
           <p className="contact-lede">
             I'm looking for full-stack, frontend, or backend roles where reliability, offline-resilience, and performance matter. The fastest way to reach me is email.
           </p>

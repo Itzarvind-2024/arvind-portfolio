@@ -17,6 +17,7 @@ export function Layout({ title, description, children, base = "" }: { title: str
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
         />
+        <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
         <link rel="stylesheet" href={`${base}/styles.css`} />
         <script
           dangerouslySetInnerHTML={{
