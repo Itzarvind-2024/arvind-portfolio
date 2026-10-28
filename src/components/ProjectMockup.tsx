@@ -41,7 +41,7 @@ export function ProjectMockup({ slug }: { slug: string }) {
             </div>
           </div>
           <div className="mockup-pos-footer">
-            <span className="pos-tax">GST (12%): ₹19.95</span>
+            <span className="pos-tax">Incl. GST (5%): ₹7.92</span>
             <span className="pos-total">Total: <strong>₹166.25</strong></span>
             <span className="pos-btn-print">F8 Print 3" Thermal</span>
           </div>
@@ -59,30 +59,28 @@ export function ProjectMockup({ slug }: { slug: string }) {
             <span className="dot yellow"></span>
             <span className="dot green"></span>
           </div>
-          <span className="window-title">In-Memory Medical Search (450,000+ items)</span>
-          <span className="window-badge latency-pill">⚡ 3.2 ms latency</span>
+          <span className="window-title">Offline Medical Search (450,000+ products)</span>
+          <span className="window-badge latency-pill">⚡ ~110 ms typical</span>
         </div>
         <div className="mockup-search-body">
           <div className="mockup-search-bar">
             <span className="search-icon">🔍</span>
-            <span className="search-input-text">paracitamol 650 <span className="cursor-blink">|</span></span>
-            <span className="search-tag">Phonetic Fuzzy</span>
+            <span className="search-input-text">krosin <span className="cursor-blink">|</span></span>
+            <span className="search-tag">Sounds like: KRSN</span>
           </div>
           <div className="mockup-search-results">
             <div className="search-result-item active">
-              <div className="search-res-title">Paracetamol 650mg (Dolo / Calpol)</div>
+              <div className="search-res-title">Crocin DS Syrup</div>
               <div className="search-res-meta">
-                <span className="match-score">98% phonetic match</span>
-                <span className="stock-count">In stock: 320 strips</span>
-                <span className="rack-pos">Rack A-12</span>
+                <span className="match-score">Sounds-like match</span>
+                <span className="stock-count">In stock</span>
               </div>
             </div>
             <div className="search-result-item">
-              <div className="search-res-title">Paracetamol 500mg Tablets</div>
+              <div className="search-res-title">Crocin 650 Tablet</div>
               <div className="search-res-meta">
-                <span className="match-score">94% match</span>
-                <span className="stock-count">In stock: 150 strips</span>
-                <span className="rack-pos">Rack A-11</span>
+                <span className="match-score">Sounds-like match</span>
+                <span className="stock-count">In stock</span>
               </div>
             </div>
           </div>
@@ -100,32 +98,72 @@ export function ProjectMockup({ slug }: { slug: string }) {
             <span className="dot yellow"></span>
             <span className="dot green"></span>
           </div>
-          <span className="window-title">LAN Peer Sync Protocol (No Internet Required)</span>
-          <span className="window-badge sync-pill">● P2P Mesh Sync</span>
+          <span className="window-title">LAN Peer Sync (No Internet Required)</span>
+          <span className="window-badge sync-pill">● Team project · in testing</span>
         </div>
         <div className="mockup-sync-body">
           <div className="sync-nodes-grid">
             <div className="sync-node">
               <div className="node-icon">🖥️</div>
               <div className="node-name">Counter 01</div>
-              <div className="node-status">Master Node</div>
-              <div className="node-db">MongoDB Replica</div>
+              <div className="node-status">Peer</div>
+              <div className="node-db">Local MongoDB</div>
             </div>
             <div className="sync-channel">
               <div className="sync-line"></div>
               <div className="sync-pulse"></div>
-              <span className="sync-protocol">LAN Broadcast · Change Streams</span>
+              <span className="sync-protocol">mDNS discovery · 1 s batches over HTTP</span>
             </div>
             <div className="sync-node">
               <div className="node-icon">💻</div>
               <div className="node-name">Counter 02</div>
-              <div className="node-status">Peer Node</div>
-              <div className="node-db">Realtime Mirror</div>
+              <div className="node-status">Peer</div>
+              <div className="node-db">Local MongoDB</div>
             </div>
           </div>
           <div className="sync-status-bar">
-            <span>Conflict Resolution: LWW + Invariant Validation</span>
-            <span className="sync-uptime">Offline Uptime: 100%</span>
+            <span>Echo guard: origin counter + recent IDs + sync marker</span>
+            <span className="sync-uptime">Heartbeat 60 s</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (slug === "premium-features-payments") {
+    return (
+      <div className="mockup-window" aria-hidden="true">
+        <div className="window-chrome">
+          <div className="window-dots">
+            <span className="dot red"></span>
+            <span className="dot yellow"></span>
+            <span className="dot green"></span>
+          </div>
+          <span className="window-title">Premium Purchase · Payment Fulfilment</span>
+          <span className="window-badge pipeline-pill">Exactly once</span>
+        </div>
+        <div className="mockup-pipeline-body">
+          <div className="pipeline-steps">
+            <div className="pipe-step">
+              <span className="pipe-icon">💳</span>
+              <span className="pipe-name">Paid on Pinelab</span>
+              <span className="pipe-sub">callback · poll · reconcile</span>
+            </div>
+            <span className="pipe-arrow">➔</span>
+            <div className="pipe-step">
+              <span className="pipe-icon">🔒</span>
+              <span className="pipe-name">Atomic claim</span>
+              <span className="pipe-sub">only one caller wins</span>
+            </div>
+            <span className="pipe-arrow">➔</span>
+            <div className="pipe-step active">
+              <span className="pipe-icon">✅</span>
+              <span className="pipe-name">Feature unlocked</span>
+              <span className="pipe-sub">every store, pushed live</span>
+            </div>
+          </div>
+          <div className="pipeline-footer">
+            <span>Duplicate callbacks, crashes and races: never charged twice, never lost</span>
           </div>
         </div>
       </div>
@@ -142,7 +180,7 @@ export function ProjectMockup({ slug }: { slug: string }) {
             <span className="dot green"></span>
           </div>
           <span className="window-title">React + Tauri Keyboard Desktop Engine</span>
-          <span className="window-badge fps-pill">⚡ 60–120 FPS</span>
+          <span className="window-badge fps-pill">⌨ Keyboard-first</span>
         </div>
         <div className="mockup-kb-body">
           <div className="kb-shortcuts-row">
@@ -154,12 +192,12 @@ export function ProjectMockup({ slug }: { slug: string }) {
           </div>
           <div className="kb-grid-preview">
             <div className="kb-metric-badge">
-              <span className="kb-num">−40%</span>
-              <span>Checkout time per customer</span>
+              <span className="kb-num">F2</span>
+              <span>Medicine search from any screen</span>
             </div>
             <div className="kb-metric-badge">
-              <span className="kb-num">0 ms</span>
-              <span>Mouse-free transaction flow</span>
+              <span className="kb-num">Esc</span>
+              <span>Closes any dialog, no mouse needed</span>
             </div>
           </div>
         </div>
@@ -200,7 +238,7 @@ export function ProjectMockup({ slug }: { slug: string }) {
             </div>
           </div>
           <div className="pipeline-footer">
-            <span>Result: 300+ items ingested & verified in &lt; 5 seconds</span>
+            <span>The pharmacist reviews the draft purchase, then confirms</span>
           </div>
         </div>
       </div>

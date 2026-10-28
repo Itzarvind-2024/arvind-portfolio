@@ -91,7 +91,7 @@ export function Home({ projects }: { projects: Project[] }) {
 
               <div className="clean-card-aside">
                 <div className="clean-impact-box">
-                  <span className="impact-label-mini">PRODUCTION IMPACT</span>
+                  <span className="impact-label-mini">{p.resultLabel ? p.resultLabel.toUpperCase() : "PRODUCTION IMPACT"}</span>
                   <p className="impact-highlight-text">{p.result}</p>
                 </div>
 

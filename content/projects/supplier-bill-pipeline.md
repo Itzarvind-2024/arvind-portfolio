@@ -1,7 +1,7 @@
 ---
 title: Supplier bill reading and nightly jobs on GCP
 summary: Turns photos and PDFs of supplier bills into purchase entries in the background, and runs nightly reports and expiry alerts for every store.
-order: 5
+order: 6
 role: Backend and cloud pipeline
 stack: GCP Pub/Sub, Cloud Scheduler, Python, Django, MongoDB
 result: No more typing supplier bills line by line; daily reports and alerts with no manual work

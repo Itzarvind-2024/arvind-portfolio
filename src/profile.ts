@@ -19,11 +19,11 @@ export const receipt = {
   title: "Shipped to production",
   lines: [
     { item: "Medicines searchable offline", value: "450,000+" },
-    { item: "Search response time", value: "< 15 ms" },
-    { item: "New store setup", value: "2 h → 7 min" },
-    { item: "Billing time per customer", value: "−40%" },
-    { item: "Billing grid frame rate", value: "60–120 fps" },
-    { item: "Stores using it daily", value: "10+" },
+    { item: "Typical search time, offline", value: "~110 ms" },
+    { item: "New store setup", value: "~2 h → ~7 min" },
+    { item: "Automated tests on premium payments", value: "470+" },
+    { item: "Desktop clients in production", value: "2" },
+    { item: "Stores using it daily", value: "5+" },
   ],
   total: { item: "Years in production", value: "2.5+" },
 };
@@ -41,7 +41,8 @@ export const experience = [
     period: "Jul 2024 – Present",
     points: [
       "Own the offline-first pharmacy POS and inventory platform end to end: architecture, backend, desktop clients, sync, deployment and production support.",
-      "Built a React + Tauri desktop client alongside the original Flutter app for lighter, keyboard-first billing; it now runs in 5+ stores, with the Flutter app in 10+.",
+      "Co-built a React + Tauri desktop client with my team alongside the original Flutter app for lighter, keyboard-first billing; it now runs in 2+ stores, with the Flutter app in 5+.",
+      "Built premium features and in-app Pinelab payments end to end, now live: every paid order unlocks exactly once, even with duplicate callbacks, crashes or offline stores.",
       "Lead a 4–6 person engineering team: task delegation, code reviews and release planning with company leadership.",
       "Mentored 6+ interns through onboarding, reviews and their first production features.",
       "Currently building automated component and end-to-end flow tests for the billing app.",

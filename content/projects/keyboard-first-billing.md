@@ -1,10 +1,10 @@
 ---
 title: Keyboard-first billing, from Flutter to React + Tauri
-summary: Made billing 40% faster by letting pharmacists work without touching the mouse, then built a lighter React + Tauri client to do it better on Windows.
-order: 4
-role: Performance work, UX architecture, new client
+summary: Made billing faster by letting pharmacists work without touching the mouse, then co-built a lighter React + Tauri client with my team to do it better on Windows.
+order: 5
+role: Performance work, UX architecture, co-built the new client
 stack: Flutter, React, Tauri, TypeScript, Provider
-result: 40% faster billing, 60–120 fps grid, ~80% fewer auto-save requests
+result: Smooth billing grid on large bills, fully mouse-free billing, and far fewer background saves
 ---
 
 ## The problem
@@ -23,7 +23,7 @@ The billing grid has 20+ columns and can hold thousands of rows. I re-architecte
 - **Stable row identity**, so sorting and filtering never show stale values.
 - **One update per keystroke** instead of three separate state notifications.
 
-Result: the grid holds **60–120 fps** while scrolling and typing.
+Result: scrolling and typing on large bills became smooth, with no more stutter.
 
 ## A mouse-free flow
 
@@ -32,16 +32,16 @@ Result: the grid holds **60–120 fps** while scrolling and typing.
 - **F2 from anywhere** jumps to medicine search for a quick price check.
 - Shortcut profiles stored per store, including Tally-style keys, so staff keep their muscle memory.
 
-Together this cut billing time per customer by **40%**.
+Together this made billing **noticeably faster**: staff can finish a customer without touching the mouse.
 
 ## Why we built a React + Tauri client
 
-Even after the fixes, Flutter on Windows remained heavy for low-end shop PCs, and keyboard focus handling kept fighting us. I built a second client in **React + Tauri**: it uses the system's built-in web view, so it is much lighter, and web focus handling gave us precise keyboard control. It now runs in **5+ stores**.
+Even after the fixes, Flutter on Windows remained heavy for low-end shop PCs, and keyboard focus handling kept fighting us. Together with my teammates, I co-built a second client in **React + Tauri**: it uses the system's built-in web view, so it is much lighter, and web focus handling gave us precise keyboard control. It now runs in **2+ stores**.
 
 ```diagram
 {
   "rows": [
-    [{"label": "Flutter client", "sub": "10+ stores, rich printing and hardware support"}, {"label": "React + Tauri client", "sub": "5+ stores, lighter, keyboard-first"}],
+    [{"label": "Flutter client", "sub": "5+ stores, rich printing and hardware support"}, {"label": "React + Tauri client", "sub": "2+ stores, lighter, keyboard-first"}],
     [{"label": "Same local Django backend", "sub": "both clients share one API"}]
   ],
   "caption": "Because the backend runs locally behind one API, we could add a new client without touching store data."
@@ -50,11 +50,11 @@ Even after the fixes, Flutter on Windows remained heavy for low-end shop PCs, an
 
 ## Smarter auto-save
 
-Bills used to save on a fixed 10-second timer, even when nothing changed. I replaced it with a dirty-flag and 5-second debounce: save only after the user pauses and only if something changed. That removed about **80% of save requests**.
+Bills used to save on a fixed 10-second timer, even when nothing changed. I replaced it with a dirty-flag and 5-second debounce: save only after the user pauses and only if something changed. Idle bills no longer save at all, so **most of the save requests disappeared**.
 
 ## Results
 
-- **40% faster** billing per customer.
-- **60–120 fps** billing grid on large bills.
-- **~80% fewer** auto-save requests.
-- A second, lighter client in production in 5+ stores.
+- **Faster billing** per customer, entirely from the keyboard.
+- A **smooth billing grid** on large bills.
+- **Far fewer** auto-save requests.
+- A second, lighter client in production in 2+ stores.

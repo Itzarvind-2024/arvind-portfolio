@@ -19,7 +19,7 @@ export function ProjectPage({ project, prev, next }: { project: Project; prev?: 
             <span className="fact-value">{project.role}</span>
           </div>
           <div className="case-fact-card result-card">
-            <span className="fact-label">Key Result</span>
+            <span className="fact-label">{project.resultLabel ?? "Key Result"}</span>
             <span className="fact-value highlight">{project.result}</span>
           </div>
           <div className="case-fact-card">

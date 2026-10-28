@@ -13,6 +13,8 @@ export type Project = {
   role: string;
   stack: string[];
   result: string;
+  // Optional label for the result box; defaults to "Production impact" / "Key result".
+  resultLabel?: string;
   html: string;
 };
 
@@ -60,6 +62,7 @@ export function loadProjects(): Project[] {
         role: data.role,
         stack: data.stack.split(",").map((s) => s.trim()),
         result: data.result,
+        resultLabel: data.resultLabel,
         html: marked.parse(body) as string,
       };
     })
