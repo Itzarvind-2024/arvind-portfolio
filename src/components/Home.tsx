@@ -60,10 +60,10 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* Selected Work Section — Clean, Breathable, High-Impact Cards */}
       <section id="work" className="wrap section">
         <div className="section-header">
-          <div className="section-tag-badge">PRODUCTION PLATFORMS</div>
+          <div className="section-tag-badge">CASE STUDIES</div>
           <h2>Selected Work</h2>
           <p className="section-lede">
-            Mission-critical retail & healthcare platforms engineered for daily offline resilience, instant local search, and zero data loss.
+            Real systems from a pharmacy platform in daily use. Each one says what I built, what my team built, and what is still unfinished.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export function Home({ projects }: { projects: Project[] }) {
             <article key={p.slug} className="clean-project-card">
               <div className="clean-card-body">
                 <div className="clean-card-meta">
-                  <span className="project-order-tag">0{p.order} // CASE STUDY</span>
+                  <span className="project-order-tag">{String(p.order).padStart(2, "0")}</span>
                   <span className="project-role-badge">{p.role}</span>
                 </div>
 
@@ -96,7 +96,7 @@ export function Home({ projects }: { projects: Project[] }) {
                 </div>
 
                 <a href={`/projects/${p.slug}/`} className="btn-explore-project">
-                  <span>Explore Case Study & Demo</span>
+                  <span>Read the case study</span>
                   <span className="arrow-icon" aria-hidden="true">→</span>
                 </a>
               </div>
@@ -108,10 +108,10 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* About Section */}
       <section id="about" className="wrap section narrow">
         <div className="section-header">
-          <div className="section-tag-badge">BACKGROUND & PHILOSOPHY</div>
+          <div className="section-tag-badge">BACKGROUND</div>
           <h2>About</h2>
           <p className="section-lede">
-            Engineering under real-world operational constraints: offline-first architectures, sub-second latency, and rock-solid reliability.
+            From mechanical engineering to the software a pharmacy counter depends on.
           </p>
         </div>
         <div className="about-card">
@@ -124,10 +124,10 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* Experience Timeline */}
       <section id="experience" className="wrap section">
         <div className="section-header">
-          <div className="section-tag-badge">CAREER JOURNEY</div>
+          <div className="section-tag-badge">CAREER</div>
           <h2>Experience</h2>
           <p className="section-lede">
-            Hands-on technical leadership, system architecture, and production delivery in high-stakes retail environments.
+            One startup, from intern to senior developer leading a small team.
           </p>
         </div>
         <div className="timeline-wrapper">
@@ -150,10 +150,10 @@ export function Home({ projects }: { projects: Project[] }) {
       {/* Skills Grid */}
       <section id="skills" className="wrap section">
         <div className="section-header">
-          <div className="section-tag-badge">CAPABILITIES & TOOLS</div>
-          <h2>Skills & Expertise</h2>
+          <div className="section-tag-badge">TOOLS</div>
+          <h2>Skills</h2>
           <p className="section-lede">
-            Core technologies and architectural paradigms battle-tested in live multi-counter store deployments.
+            What I use in production, grouped by where it sits in the stack.
           </p>
         </div>
         <div className="skills-grid">
@@ -174,9 +174,9 @@ export function Home({ projects }: { projects: Project[] }) {
       <section id="contact" className="wrap section contact">
         <div className="contact-box">
           <div className="section-tag-badge">GET IN TOUCH</div>
-          <h2>Let's build something exceptional</h2>
+          <h2>Let's talk</h2>
           <p className="contact-lede">
-            I'm looking for full-stack, frontend, or backend roles where reliability, offline-resilience, and performance matter. The fastest way to reach me is email.
+            I'm looking for full-stack or backend roles where reliability and performance matter. Email is the fastest way to reach me.
           </p>
           <div className="contact-actions">
             <a className="contact-email" href={`mailto:${profile.email}`}>{profile.email}</a>

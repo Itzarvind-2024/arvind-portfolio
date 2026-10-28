@@ -96,7 +96,7 @@
   });
 
   // Scrollspy for active nav link
-  if ("IntersectionObserver" in window && location.pathname === "/" || location.pathname === "/index.html") {
+  if ("IntersectionObserver" in window && (location.pathname === "/" || location.pathname === "/index.html")) {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {

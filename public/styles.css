@@ -702,8 +702,8 @@ kbd {
    ========================================================================== */
 
 .section {
-  padding-top: clamp(72px, 8vw, 112px);
-  padding-bottom: clamp(72px, 8vw, 112px);
+  padding-top: clamp(56px, 6.5vw, 88px);
+  padding-bottom: clamp(56px, 6.5vw, 88px);
   border-top: 1px solid var(--line);
   position: relative;
 }
@@ -830,10 +830,10 @@ kbd {
 
 .project-order-tag {
   font-family: var(--mono);
-  font-size: 11.5px;
-  font-weight: 650;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .project-role-badge {
@@ -1867,6 +1867,12 @@ kbd {
   border-left: 3px solid var(--accent);
 }
 
+@media (min-width: 900px) {
+  .case-facts-grid {
+    grid-template-columns: 1fr 1.5fr 1.2fr;
+  }
+}
+
 .fact-label {
   display: block;
   font: 600 11px/1 var(--mono);
@@ -1924,6 +1930,43 @@ kbd {
 .prose strong {
   font-weight: 600;
   color: var(--ink);
+}
+
+.prose table {
+  width: 100%;
+  margin: 24px 0 28px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.prose th,
+.prose td {
+  text-align: left;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.prose th {
+  font: 600 11.5px/1.4 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: var(--surface-hover);
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.prose tbody tr:hover td {
+  background: var(--surface-hover);
 }
 
 .pager {
@@ -2133,8 +2176,28 @@ kbd {
     top: 22px;
   }
 
+  .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    row-gap: 8px;
+  }
+
   .site-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
     display: none;
+  }
+
+  html {
+    scroll-padding-top: 128px;
   }
 
   .footer-inner .hint {
@@ -2144,7 +2207,17 @@ kbd {
 
 @media (max-width: 540px) {
   .wrap {
-    padding: 0 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .prose table {
+    font-size: 14px;
+  }
+
+  .prose th,
+  .prose td {
+    padding: 9px 10px;
   }
 
   .hero h1 {

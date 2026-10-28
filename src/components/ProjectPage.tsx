@@ -35,8 +35,8 @@ export function ProjectPage({ project, prev, next }: { project: Project; prev?: 
         {/* Proof of Work Visual Showcase */}
         <div className="case-proof-section">
           <div className="proof-header">
-            <span className="proof-tag">SYSTEM PROOF OF WORK</span>
-            <span className="proof-sub">Architecture & Desktop Simulation</span>
+            <span className="proof-tag">AT A GLANCE</span>
+            <span className="proof-sub">Simplified illustration, not a screenshot</span>
           </div>
           <div className="proof-mockup-wrapper">
             <ProjectMockup slug={project.slug} />

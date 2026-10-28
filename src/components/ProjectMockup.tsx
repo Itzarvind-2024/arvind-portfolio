@@ -179,16 +179,15 @@ export function ProjectMockup({ slug }: { slug: string }) {
             <span className="dot yellow"></span>
             <span className="dot green"></span>
           </div>
-          <span className="window-title">React + Tauri Keyboard Desktop Engine</span>
+          <span className="window-title">Keyboard-first data entry</span>
           <span className="window-badge fps-pill">⌨ Keyboard-first</span>
         </div>
         <div className="mockup-kb-body">
           <div className="kb-shortcuts-row">
-            <div className="kb-key-card"><kbd>F1</kbd><span>New Bill</span></div>
-            <div className="kb-key-card"><kbd>F2</kbd><span>Search</span></div>
-            <div className="kb-key-card"><kbd>F4</kbd><span>Discount</span></div>
-            <div className="kb-key-card"><kbd>Tab</kbd><span>Next</span></div>
-            <div className="kb-key-card highlight"><kbd>F8</kbd><span>Print Bill</span></div>
+            <div className="kb-key-card"><kbd>Enter</kbd><span>Next field</span></div>
+            <div className="kb-key-card"><kbd>↑ ↓</kbd><span>Move rows</span></div>
+            <div className="kb-key-card highlight"><kbd>F2</kbd><span>Search</span></div>
+            <div className="kb-key-card"><kbd>Esc</kbd><span>Close dialog</span></div>
           </div>
           <div className="kb-grid-preview">
             <div className="kb-metric-badge">
@@ -205,7 +204,7 @@ export function ProjectMockup({ slug }: { slug: string }) {
     );
   }
 
-  if (slug === "supplier-bill-pipeline") {
+  if (slug === "cloud-reports-einvoicing") {
     return (
       <div className="mockup-window" aria-hidden="true">
         <div className="window-chrome">
@@ -214,31 +213,31 @@ export function ProjectMockup({ slug }: { slug: string }) {
             <span className="dot yellow"></span>
             <span className="dot green"></span>
           </div>
-          <span className="window-title">Supplier Invoice Ingestion Pipeline</span>
-          <span className="window-badge pipeline-pill">Auto-Ingest</span>
+          <span className="window-title">GST e-invoice queue</span>
+          <span className="window-badge pipeline-pill">Pub/Sub · Cloud Functions</span>
         </div>
         <div className="mockup-pipeline-body">
           <div className="pipeline-steps">
             <div className="pipe-step">
-              <span className="pipe-icon">📄</span>
-              <span className="pipe-name">PDF / Excel Invoice</span>
-              <span className="pipe-sub">Distributor format</span>
+              <span className="pipe-icon">🧾</span>
+              <span className="pipe-name">Wholesale sale</span>
+              <span className="pipe-sub">queued as pending</span>
             </div>
             <span className="pipe-arrow">➔</span>
             <div className="pipe-step">
-              <span className="pipe-icon">⚙️</span>
-              <span className="pipe-name">Parser & Normalizer</span>
-              <span className="pipe-sub">Extract batches, taxes</span>
+              <span className="pipe-icon">⏱</span>
+              <span className="pipe-name">Due today?</span>
+              <span className="pipe-sub">supplier's filing rule</span>
             </div>
             <span className="pipe-arrow">➔</span>
             <div className="pipe-step active">
-              <span className="pipe-icon">📦</span>
-              <span className="pipe-name">Live Inventory</span>
-              <span className="pipe-sub">Instant bulk upsert</span>
+              <span className="pipe-icon">✅</span>
+              <span className="pipe-name">IRN + e-way bill</span>
+              <span className="pipe-sub">via GSTZen, PDFs saved</span>
             </div>
           </div>
           <div className="pipeline-footer">
-            <span>The pharmacist reviews the draft purchase, then confirms</span>
+            <span>Every invoice keeps a status and the full response: pending → processing → success / failed</span>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ export function Layout({ title, description, children, base = "" }: { title: str
               <span className="brand-avatar" aria-hidden="true">AV</span>
               <span className="brand-text">
                 <span className="brand-name">{profile.name}</span>
-                <span className="brand-sub">Full-Stack Engineer</span>
+                <span className="brand-sub">{profile.role}</span>
               </span>
             </a>
             <nav aria-label="Main navigation" className="site-nav">
@@ -73,7 +73,7 @@ export function Layout({ title, description, children, base = "" }: { title: str
         <main id="main">{children}</main>
         <footer className="site-footer">
           <div className="wrap footer-inner">
-            <p className="copyright">© {new Date().getFullYear()} {profile.name} · Built with React & TypeScript (Zero-JS SSG)</p>
+            <p className="copyright">© {new Date().getFullYear()} {profile.name} · Static site built with React & TypeScript</p>
             <p className="hint">Keyboard shortcuts: <kbd>1</kbd>–<kbd>5</kbd> jump sections, <kbd>T</kbd> toggle theme</p>
           </div>
         </footer>

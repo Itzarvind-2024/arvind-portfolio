@@ -7,7 +7,7 @@ export const profile = {
   location: "Uttar Pradesh, India · open to remote",
   headline: "I build software that keeps a business running, even when the internet doesn't.",
   intro:
-    "For 2.5+ years I've designed and shipped an offline-first billing and inventory platform that pharmacies use every working day. I work across the whole stack: desktop apps in Flutter and React + Tauri, backends in Django, sync between machines and the cloud, and the installer that puts it all on a store's computer.",
+    "For 2.5+ years I've built and run an offline-first billing and inventory platform that pharmacies use every working day. I work across the stack: the Django backend, sync between store computers and the cloud, offline search, desktop apps in Flutter and React + Tauri, and the installer that puts it all on a store's computer.",
   email: "arvind.20203033@gmail.com",
   github: "https://github.com/Itzarvind-2024",
   linkedin: "https://linkedin.com/in/arvind1106",
@@ -40,9 +40,10 @@ export const experience = [
     org: "Healthcare-retail SaaS startup · Remote",
     period: "Jul 2024 – Present",
     points: [
-      "Own the offline-first pharmacy POS and inventory platform end to end: architecture, backend, desktop clients, sync, deployment and production support.",
+      "Core backend engineer on the offline-first pharmacy POS: main author of the cloud-to-store sync engine and the offline medicine search, plus Windows packaging and production support.",
       "Co-built a React + Tauri desktop client with my team alongside the original Flutter app for lighter, keyboard-first billing; it now runs in 2+ stores, with the Flutter app in 5+.",
       "Built premium features and in-app Pinelab payments end to end, now live: every paid order unlocks exactly once, even with duplicate callbacks, crashes or offline stores.",
+      "Main author of GST e-invoicing for wholesale sales: invoice validation, the government payload, and the Cloud Functions that file IRNs and e-way bills; also contributed to the Pub/Sub report pipeline.",
       "Lead a 4–6 person engineering team: task delegation, code reviews and release planning with company leadership.",
       "Mentored 6+ interns through onboarding, reviews and their first production features.",
       "Currently building automated component and end-to-end flow tests for the billing app.",
@@ -67,8 +68,8 @@ export const experience = [
 
 export const skills = [
   { group: "Frontend & desktop", items: ["React", "Flutter (Windows desktop)", "Tauri", "TypeScript", "Tailwind CSS", "Provider state management"] },
-  { group: "Backend", items: ["Django", "Python", "Node.js", "Express", "Socket.IO", "REST APIs"] },
-  { group: "Data & search", items: ["MongoDB (replica sets, change streams, aggregation)", "SQLite", "Meilisearch", "Phonetic search"] },
-  { group: "Cloud & delivery", items: ["GCP Pub/Sub", "Cloud Scheduler", "Compute Engine", "PyInstaller", "Inno Setup", "Cloudflare Tunnel"] },
-  { group: "Ways of working", items: ["System design", "Code review", "Performance profiling", "AI-assisted development", "Mentoring"] },
+  { group: "Backend", items: ["Django", "Python", "REST APIs", "Payment gateways (Pinelab)", "Ably realtime", "Node.js", "Express", "Socket.IO"] },
+  { group: "Data & search", items: ["MongoDB (replica sets, change streams, aggregation)", "SQLite", "Meilisearch", "Phonetic & fuzzy search"] },
+  { group: "Cloud & delivery", items: ["GCP Pub/Sub", "Cloud Functions", "Cloud Storage", "Cloud Scheduler", "Compute Engine", "PyInstaller", "Inno Setup", "Cloudflare Tunnel"] },
+  { group: "Ways of working", items: ["System design", "Code review", "Performance profiling", "Automated testing", "AI-assisted development", "Mentoring"] },
 ];
